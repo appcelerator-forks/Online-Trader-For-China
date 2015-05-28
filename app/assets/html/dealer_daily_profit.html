@@ -1,0 +1,171 @@
+<html>
+    <head>
+    	<title>Order List</title>
+    	 <link rel="stylesheet" href="js/jquery-ui.css">
+    	 <link rel="stylesheet" href="js/noty.css">
+    	 <link rel="stylesheet" href="js/noty_theme_default.css">
+    	 <link rel="stylesheet" href="css/main.css">
+  		 <script src="js/jquery-1.9.1.js"></script>
+  		 <script src="js/jquery-ui.js"></script>
+  		 <script src="js/noty.js"></script>
+   		 <script src="js/main.js" type="text/javascript"></script>
+		<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+  		
+  		<script>
+  			var currentOption = '';
+	  		Ti.App.addEventListener("app:getDailyProfit", function(e) {
+				
+	            localStorage.setItem("session",e.session);
+	            localStorage.setItem("url", e.url);
+	            localStorage.setItem("targetURL", e.url); //Default
+	            //drawTable(e.url+"&month="+month+"&year="+year);
+	            refreshTable();
+	        });
+  			
+			function refreshTable(){
+				var month =$( "#month" ).val();
+				var year =$( "#year" ).val();
+				var dateRpt = localStorage.getItem("targetURL");
+				$("#dealer_statistic_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+				
+				drawTable(dateRpt+"&month="+month+"&year="+year);
+			}
+			
+			function drawTable(queryUrl){
+				console.log(queryUrl);
+				$.getJSON(queryUrl, function( data ) {
+					
+				   if(data.status == 'error'){
+				   	//getStateSelector();
+				   }else{
+				   	var total_item = 0;
+				   	var str = "";
+				   	 if(data.status == 'success'){
+				   	 	var dateRpt = localStorage.getItem("targetURL");
+				   	 	var tableTitle = localStorage.getItem("tableTitle");
+
+				   	 	str += "<table cellpadding='0' cellspacing='0' style='width:100%;' class='bordered'>";
+				   	 	str += "<tr><td width='25%'>Date</td><td width='15%'>Courier</td><td width='15%'>COD</td><td width='15%'>Ads</td><td width='15%'>Others</td></tr>";
+						if(data.data == ""){
+					  		str += "<tr><td colspan='6' style='text-align:center;'>No records found</td></tr>";
+					  	}else{
+					  		var total_courier = 0;
+					  		var total_cod =0;
+					  		var total_ads_cost =0;
+					  		var total_other_cost=0;
+					  		$.each( data.data, function( key, val ) {
+
+					  			total_courier += val.courier;
+					  			total_cod += val.cod;
+					  			total_ads_cost += val.ads_cost;
+					  			total_other_cost += val.other_cost;
+								str += "<tr><td>"+val.convertedDate+"</td><td style='text-align:right;'>"+val.courier+"</td><td style='text-align:right;'>"+val.cod+"</td><td style='text-align:right;'>"+val.ads_cost+"</td><td style='text-align:right;'>"+val.other_cost+"</td></tr>";
+							});
+					  	}
+					  	str += "<tr><td width='25%'>TOTAL</td><td width='19%'>"+total_courier+"</td><td width='18%'>"+total_cod+"</td><td width='19%'>"+total_ads_cost+"</td><td width='19%'>"+total_other_cost+"</td></tr>";
+					  	str += "<table>";
+					  	$("#dealer_statistic_list").html(str);
+					  }
+				   }
+				})
+				.error(function() { refreshTable(); });
+			}
+			
+			
+			$(document).ready(function(){
+				
+				var currentYear = new Date().getFullYear();
+  			
+	  			for(var year = 2014; year<=currentYear; year++){
+	  				if(year == currentYear){
+						$('#year').append($("<option/>", {
+					        value: year,
+					        selected: "selected",
+					        text: year
+					    }));
+					}else{
+						$('#year').append($("<option/>", {
+					        value: year,
+					        text: year
+					    }));
+					}
+	  			}
+	  			
+	  			var currentMonth = new Date().getMonth();
+  			
+	  			for(var m = 1; m<=12; m++){
+	  				if(m == currentMonth+1){
+	  					$('#month').append($("<option/>", {
+					        value: m,
+					        selected: "selected",
+					        text: m
+					    }));
+	  				}else{
+		  				$('#month').append($("<option/>", {
+					        value: m,
+					        text: m
+					    }));
+				   	}
+	  			}
+	  			
+	  			
+
+	  			$("#month").change(function(){
+	  				refreshTable();
+	  			});
+	  			
+	  			$("#year").change(function(){
+	  				refreshTable();
+	  			});
+		     });
+		</script>
+		<style>
+			input.text-input {
+				width: 75%;
+				margin:0 auto;
+				-moz-border-radius: 4px;
+			    -webkit-border-radius: 4px;
+				border-radius: 4px;
+				background: #fff;
+				border: solid 1px #BDBDBD;
+				color: #555;
+				height:34px;
+				font-size: 13px;
+				float:left;
+			}
+  			
+			.staticBar{
+				-webkit-box-shadow: 0px 1px 3px rgba(59,57,59,1);
+				-moz-box-shadow:  0px 1px 3px rgba(59,57,59,1);
+				box-shadow: 0px 1px 3px rgba(59,57,59,1);
+				width:100%;	
+				position:inline;
+				height:35px;
+				top:0;
+				background-color:#D8D8D8;
+				left:0;
+				padding-top:5px;
+				padding-bottom:5px;
+				text-align:center;
+				index:99;
+			}
+		</style>
+  </head>
+    
+    <body>
+    	<div class="staticBar" id="dateBar">
+    		
+    		<div id="monthyear" style="text-align:center;">
+    			Month
+	    		<select name="month" id="month" style="width:40px;">
+	    		</select>
+	    		Year
+	    		<select id="year" name="year" style="width:40px;">
+	    		</select>
+    		</div>
+    	</div>
+    	<div id="dealer_statistic_list" style="padding-top:45px;display:block;"></div>	
+		
+	</body>
+	
+</html>
