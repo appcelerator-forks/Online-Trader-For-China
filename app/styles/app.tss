@@ -12,12 +12,12 @@
 "#header":{
 	height: '50dp',
 	top: 0,
-	backgroundColor: '#e02222'
+	backgroundColor: '#700202'
 },
 ".header":{
 	height: '50dp',
 	top: 0,
-	backgroundColor: '#e02222'
+	backgroundColor: '#700202'
 },
 "#footer":{
 	height: 64,
@@ -26,7 +26,7 @@
 	contentWidth: Ti.UI.SIZE,
 	layout: "horizontal",
 	bottom:0,
-	backgroundColor: '#e02222'
+	backgroundColor: '#700202'
 },
 
 "#subfooter":{
@@ -55,7 +55,7 @@
 	font:{
 		fontSize: '18dp'
 	},
-	color: "#e02222",
+	color: "#700202",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
 },
 ".separator":{

@@ -13,8 +13,9 @@
 				<TextField id="username" /><Label id="usernamehint">輸入用戶名</Label>
 				<TextField id="password" /><Label id="passwordhint">輸入密碼</Label>
 			</ScrollView>
-			<Button id="btnLogin" onClick="doLogin" title="登錄"    />
-			
+		 
+				<Button textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" id="btnLogin" onClick="doLogin" title="登錄"    />
+			 
 		</View>
 
 	</Window>
