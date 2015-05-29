@@ -46,7 +46,8 @@
 	 color: "#333"
 },
 "#btnLogin" : {
-	backgroundImage : "/images/btn-login.png", 
-	width  : "90%",
+	backgroundColor : "#700202", 
+	color: "#ffffff",
+	width  : "60%",
 	left:10
 } 

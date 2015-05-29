@@ -80,36 +80,27 @@ function doLogin(e) {
  	console.log(url);
 	var client = Ti.Network.createHTTPClient({
      // function called when the response data is available
-     onload : function(e) {
-     	 
+     onload : function(e) { 
          var res = JSON.parse(this.responseText);
          if(res.status == "success"){
-         	 if(res.data.roles == "admin"){
-         	 	createAlert('Roles declined','Your roles(admin) is not authorize for this app');         	 	
-         	 }else{
-         	 	Ti.App.Properties.setString('roles',res.data.roles);
-         	 	Ti.App.Properties.setString('session',res.data.session);
-         	
-         	 	 if(Alloy.Globals.osname == "android"){
-         	 	 	subscribeDeviceToken(dt,res.data.roles);
-         	 	 }
-         	 	 
-         	 	 if(res.data.roles == 'dealer' || res.data.roles == 'staff'){
-         	 	 	// $.index.close();
-         	 	 	var summary = Alloy.createController(res.data.roles + '_summary').getView(); 
-	    	     	setWindowRelationship(summary);
-         	 	  }else{ 
-//          	 	 	 
-	    	     	// $.index.close(); 
-         	 	 	var home = Alloy.createController(res.data.roles + '_home').getView(); 
-			      	setWindowRelationship(home);
-         	 	  }
-	       		 if(payload != null){
-					getNotificationNumber(payload);	
-					//Ti.App.Payload = '';
-				}
-         	 }
-         	 
+         	  
+         	Ti.App.Properties.setString('roles',res.data.roles);
+			Ti.App.Properties.setString('session',res.data.session);
+			
+			if(Alloy.Globals.osname == "android"){
+				subscribeDeviceToken(dt,res.data.roles);
+			}
+			
+			if(res.data.roles == 'dealer' || res.data.roles == 'staff'){ 
+				var summary = Alloy.createController(res.data.roles + '_summary').getView(); 
+				setWindowRelationship(summary);
+			 }else{   
+				var home = Alloy.createController(res.data.roles + '_home').getView(); 
+			 	setWindowRelationship(home);
+			 }
+			if(payload != null){
+				getNotificationNumber(payload);	 
+			} 
          	 $.activityIndicator.hide(); 
 			 $.loadingBar.opacity = "0";
 			 $.loadingBar.height = "0";
