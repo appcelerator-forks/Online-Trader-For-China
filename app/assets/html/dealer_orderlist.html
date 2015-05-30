@@ -106,7 +106,7 @@
         		localStorage.setItem("listUrl", e.url);
         		var year =$( "#year" ).val();
         		var month =$( "#month" ).val();
-        		$("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+        		$("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>載入中...</div>");
 				 
 				drawTable(e.url+"&month="+month+"&year="+year);
 
@@ -162,7 +162,7 @@
 									prod_counter++;
 								});
 							 
-								str += "<tr><th width='20%' valign='top'>Products</th><td valign=top style='color:#525252'> : "+ prod_text +"</td></tr>";
+								str += "<tr><th width='20%' valign='top'>產品</th><td valign=top style='color:#525252'> : "+ prod_text +"</td></tr>";
 									
 						      	str += "</table>";
 						      	
@@ -202,10 +202,10 @@
     	<input type="hidden" name="total_item" id="total_item" value="0">
     	<div class="staticBar" id="inputdatepick">
 			<div id="monthyear" style="text-align:center;">
-    			Month
+    			月份
 	    		<select name="month" id="month" style="width:60px;">
 	    		</select>
-	    		Year
+	    		年度
 	    		<select id="year" name="year" style="width:80px;">
 	    		</select>
     		</div>

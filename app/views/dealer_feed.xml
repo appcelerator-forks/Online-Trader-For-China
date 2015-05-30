@@ -7,7 +7,7 @@
 		</View>
 		<View class="content" height="88%">
 			
-			<Label class="h2">NEWS FEED</Label>
+			<Label class="h2">信息提要</Label>
 			<ImageView class="separator"></ImageView>
 			 
 			<TableView id="tableView" bottom="135">

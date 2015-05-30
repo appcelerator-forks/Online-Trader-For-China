@@ -1,0 +1,35 @@
+<Alloy>
+	<Window class="container" id="dispatcher_settings">
+		<Require src="_header" id="header"></Require>
+		<View class="content" id="content">
+			<Label class="h2">設置</Label>
+			<ImageView class="separator" bottom=5></ImageView>
+			<ScrollView layout="vertical" height="78%" width="100%">
+			
+				<View class="container" layout="horizontal" top="5" height="60">
+					<Label class="form_label" title="Name" >管理员名稱</Label>
+					<TextField class="text_input" id="fullname"  value=""  width="90%" hintText='請輸入员工名稱'/>
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Contact" >聯繫号码</Label>
+					<TextField class="number_input" id="mobile" hintText='請輸入聯繫号码' value=""  width="90%" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Contact" >关注州／地区</Label>
+					<TextField class="text_input" id="prefer_state" onClick="chooseState" editable="false" hintText='請選擇关注州／地区'  width="90%" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Email">新密碼</Label>
+					<TextField class="password_input" id="new_password" hintText='請輸入新密碼' value="" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Email">確認密碼</Label>
+					<TextField class="password_input" id="confirm_password" hintText='請輸入確認密碼' value="" />
+				</View>
+				<Button textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" id="updateButton" onClick="doUpdates" title="更新"    />
+			</ScrollView>
+			
+		</View>
+		<Require src="_dispatcher_footer" id="footer"></Require>
+	</Window>
+</Alloy>

@@ -42,7 +42,7 @@ function getProfitSummary(e){
 	var url = Ti.API.GETDEALERDAILYPROFIT + Ti.App.Properties.getString('session');
 	var client = Ti.Network.createHTTPClient({
 	     // function called when the response data is available
-	     onload : function(e) {
+	     onload : function(e) { 
 	         var res = JSON.parse(this.responseText);
 	        
 	         if(res.status == "success"){
@@ -75,7 +75,7 @@ function getSummary(e) {
 	var url = Ti.API.GETDAILYSUMMARYBYMONTH + Ti.App.Properties.getString('session')+ "&date=" + year+'-'+month;
 	var client = Ti.Network.createHTTPClient({
 	     // function called when the response data is available
-	     onload : function(e) {
+	     onload : function(e) { 
 	         var res = JSON.parse(this.responseText);
 	         
 	         if(res.status == "Success"){
@@ -116,11 +116,11 @@ function getAnnouncement(e) {
 	var url = Ti.API.GETANNOUNCEMENT + Ti.App.Properties.getString('session'); 
 	var totalWidth = 0;
 	var text = "";
-	var screenWidth = PixelsToDPUnits(Ti.Platform.displayCaps.platformWidth);
-
+	var screenWidth = PixelsToDPUnits(Ti.Platform.displayCaps.platformWidth); 
 	var client = Ti.Network.createHTTPClient({
 	     // function called when the response data is available
 	     onload : function(e) {
+	     	
 	         var res = JSON.parse(this.responseText);
 	         if(res.status == "success"){
 	         	
@@ -163,7 +163,7 @@ function getAnnouncement(e) {
 					    e.source.right = 0;
 					    e.source.animate(animation); 
 					});
-				   e.source.animate(animation);
+				   //e.source.animate(animation);
 				  
 				});
 				$.noticeBoard.add(label);
@@ -193,11 +193,11 @@ function goDailyReport(){
 
 //$.inventoryListview.addEventListener('load', function() {
 function setInventoryTableView(){
-	var url = Ti.API.GETINVENTORYDATA + Ti.App.Properties.getString('session');
-	 
+	var url = Ti.API.GETINVENTORYDATA + Ti.App.Properties.getString('session'); 
 	var client = Ti.Network.createHTTPClient({
 		 onload : function(e) {
 		 	 var tableData = [];
+		 	 
 	         var res = JSON.parse(this.responseText);
 	         if(res.status == "success"){
 	         	
@@ -233,8 +233,7 @@ function setInventoryTableView(){
 			}
 		},
 	     // function called when an error occurs, including a timeout
-	     onerror : function(e) {
-	     	console.log('e');
+	     onerror : function(e) { 
 	         getAnnouncement(e);
 	         setInventoryTableView();
 	     },

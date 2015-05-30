@@ -2,7 +2,7 @@
 	<Window class="container">
 		<Require src="_subheader" id="footer"></Require>
 		<View class="content" height="88%">
-			<Label class="h2">MONTHLY COMMISSION DETAIL</Label>
+			<Label class="h2">每月佣金詳情</Label>
 			<ImageView class="separator"></ImageView>
 			<TableView id="tableView">
 				

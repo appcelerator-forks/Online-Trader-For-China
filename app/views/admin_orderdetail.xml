@@ -1,0 +1,18 @@
+<Alloy>
+	<Window class="container" id="dis_orderdetail_win">
+		<Require src="_orderdetailheader"></Require>
+		<View class="content_post" id="content">
+			<Label class="h2">訂購詳細</Label>
+			<ImageView class="separator" ></ImageView>
+		</View>
+		<View class="details_form" id="details_formView" height="78%" >
+			<WebView id="orderdetailview" disableBounce="true" onLoad="construct"  url="/html/dispatcher_orderdetail.html" />
+		</View>
+		<View id="footer" opacity="0" height="62">
+			 
+			<View width="50%" bottom="20" layout="horizontal" ><Label   id="btncancel" onTouchend="orderCancel">訂購取消</Label><Label class="border-line"  top="0%"></Label></View>
+			 <View class="border-line"></View>
+			<View width="auto" bottom="20"><Label id="btncomplete" onTouchend="orderComplete">完成訂購</Label></View>
+		</View>
+	</Window>
+</Alloy>

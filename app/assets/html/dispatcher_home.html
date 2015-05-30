@@ -139,7 +139,7 @@
 				$("#area_selector").hide();	
 		    }
 		    	
-			$("#pending_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Waiting...</div>");
+			$("#pending_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>请稍等...</div>");
 			var url = localStorage.getItem("url");
 			setTimeout(function(){drawTable(url+"&state="+area);},1500);
 		 }
@@ -160,7 +160,7 @@
 			
 			$.getJSON(pick + "&o_id="+o_id, function( data ) {
 				if(data.status == 'error'){
-					noty({"text":"Unknown error. Please try again later.","layout":"center","type":"error","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":500,"timeout":4000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
+					noty({"text":"未知錯誤。請稍後再試。.","layout":"center","type":"error","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":500,"timeout":4000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
 				}else{
 			   		noty({"text":"Ref no: "+o_id+" picked successfully!","layout":"center","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":500,"timeout":2500,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
 					
@@ -204,16 +204,16 @@
 					      	str += "<table class='table_"+key+" boxes "+unread+"' width='100%' id='table_"+ val.order.o_id+"'>";
 
 					      	str += "<tr><th width='20%'>Ref. No.</th><td width='70%' style='color:#525252'> : "+ val.order.o_id+"</td><td rowspan=4 valign=middle><div id='divPick"+val.order.o_id+"'><img onClick='return pickOrder(\""+key+"\", "+val.order.o_id+");' src='../images/btn-pick-blue.png'  style='height:30px; float:right;' ></div><div id='divPicking"+val.order.o_id+"' style='height:30px; float:right;display:none;'>Picking...</div></td></tr>";
-					      	str += "<tr><th width='20%' valign=top>Customer</th><td valign=top style='color:#525252'> : "+ val.order.name+"</td></tr>";
+					      	str += "<tr><th width='20%' valign=top>客戶姓名</th><td valign=top style='color:#525252'> : "+ val.order.name+"</td></tr>";
 					      	if(val.order.areaname != ""){
-					      		str += "<tr><th width='20%' valign=top>Location</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.areaname+", "+val.order.area+"</td></tr>";
+					      		str += "<tr><th width='20%' valign=top>区域</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.areaname+", "+val.order.area+"</td></tr>";
 					      	}else{
-					      		str += "<tr><th width='20%' valign=top>Location</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.area+"</td></tr>";
+					      		str += "<tr><th width='20%' valign=top>区域</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.area+"</td></tr>";
 					      	}
-					      	str += "<tr><th width='20%' valign=top>Status</th><td valign=top style='color:#525252'> : "+ val.order.status+"</td></tr>";
-					      	str += "<tr><th width='20%' valign=top>Release Reason</th><td valign=top style='color:#525252'> : "+ val.order.releasereason+"</td></tr>";
+					      	str += "<tr><th width='20%' valign=top>狀態</th><td valign=top style='color:#525252'> : "+ val.order.status+"</td></tr>";
+					      	str += "<tr><th width='20%' valign=top>釋放訂單原因</th><td valign=top style='color:#525252'> : "+ val.order.releasereason+"</td></tr>";
 					      	
-					      	str += "<tr><th width='20%'>Post On</th><td valign=top style='color:#525252'> : "+ val.order.created+"</td></tr>";
+					      	str += "<tr><th width='20%'>發表於</th><td valign=top style='color:#525252'> : "+ val.order.created+"</td></tr>";
 					      	//str += "<tr><th width='100%' colspan=3><div style='border-bottom: 1px solid #9d0404; padding-top:10px;'></div></th></tr>";
 							var prod_text = "";
 							var prod_counter = 1;
@@ -225,9 +225,9 @@
 								
 								prod_counter++;
 							});
-							str += "<tr><th width='20%' valign='top'>Products</th><td valign=top style='color:#525252'> : "+ prod_text +"</td></tr>";
+							str += "<tr><th width='20%' valign='top'>产品</th><td valign=top style='color:#525252'> : "+ prod_text +"</td></tr>";
 							if(val.order.releaseddate != ""){
-					      		str += "<tr><th width='20%' valign=top>Released</th><td valign=top style='color:#525252'> : "+ val.order.releaseddate+"</td></tr>";
+					      		str += "<tr><th width='20%' valign=top>釋放訂單日期</th><td valign=top style='color:#525252'> : "+ val.order.releaseddate+"</td></tr>";
 					      	}	
 					      	str += "</table>";
 					      	total_item++;

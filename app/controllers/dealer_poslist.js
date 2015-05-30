@@ -9,7 +9,9 @@ Ti.App.Properties.setString('module', 'dealer_poslist');
 Ti.App.fireEvent("getSession", {session:Ti.App.Properties.getString("session")});
 /**End**/
 
-Ti.UI.Android.hideSoftKeyboard(); 
+if(Alloy.Globals.osname == "android"){
+	Ti.UI.Android.hideSoftKeyboard(); 
+}
 
 function goPosDetails(e){
 	

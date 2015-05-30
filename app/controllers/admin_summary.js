@@ -12,6 +12,7 @@ function getSummary() {
 	var client = Ti.Network.createHTTPClient({
 	     // function called when the response data is available
 	     onload : function(e) {
+	     	
 	         var res = JSON.parse(this.responseText);
 	         
 	         if(res.status == "Success"){

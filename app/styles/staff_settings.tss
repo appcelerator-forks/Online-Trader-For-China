@@ -39,8 +39,16 @@
      returnKeyType: Titanium.UI.RETURNKEY_NEXT ,
 	 borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
 	 clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ONFOCUS
-}
-
+},
+"#updateButton" : {
+	backgroundColor : "#700202",  
+	color: "#ffffff",
+	width  : "90%",
+	top:10,
+	height:40,
+	left:10,
+	borderRadius: "5"
+} ,
 ".form_label" :{
 	color: '#000000',
 	 left:10,

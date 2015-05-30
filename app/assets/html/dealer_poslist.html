@@ -4,6 +4,7 @@
     	 <link rel="stylesheet" href="js/jquery-ui.css">
     	 <link rel="stylesheet" href="js/noty.css">
     	 <link rel="stylesheet" href="js/noty_theme_default.css">
+    	 <link rel="stylesheet" href="css/main.css">
   		 <script src="js/jquery-1.9.1.js"></script>
   		 <script src="js/jquery-ui.js"></script>
   		 <script src="js/noty.js"></script>
@@ -31,7 +32,7 @@
             		localStorage.setItem("posUrl", e.posUrl);
             		var year =$( "#year" ).val();
         			var month =$( "#month" ).val();
-            		$("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+            		$("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>載入中...</div>");
             		
             		//Ti.App.fireEvent('Ti:clearCache', { 
 					//		queryUrl: e.posUrl+"&date="+thedate
@@ -90,83 +91,7 @@
 				});
 			  });
 		</script>
-		<style>
-  		    html {-webkit-text-size-adjust: none;}
-  		 	body{
-				color: #e02222;
-				font-size:12px;
-				background-image: url('../images/bg.jpg');
-				background-repeat: repeat;
-			}
-
-			input.text-input {
-				width: 80%;
-				margin:0 auto;
-				-moz-border-radius: 4px;
-			    -webkit-border-radius: 4px;
-				border-radius: 4px;
-				background: #fff;
-				border: solid 1px #BDBDBD;
-				color: #555;
-				height:34px;
-				font-size: 13px;
-			}
-  			table tr td, tr th{
-				font-size:12px;
-				font-family: Verdana;
-				color: "#e02222";
-			}
-			table.boxes{
-				border: solid 1px #d4d4d4;
-				background:#F6F4F0;
-				color: #444444;
-				border-radius: 2px;
-				-moz-border-radius: 2px;
-			    -webkit-border-radius: 2px;
-			    padding: 5px;
-			    margin: 5px 0;
-			}
-			select {
-				border-radius: 4px;
-				background: #ffffff;
-				-webkit-appearance: none;
-				border: solid 1px #BDBDBD;
-				color: #555;
-				-moz-border-radius: 4px;
-			    -webkit-border-radius: 4px;
-			    padding: 5px;
-				height: 34px;
-			}
-			.tableTitle {
-				background: #D2F0F4;
-				color:#645D57;
-				font-size:12px;
-				padding:5px;
-				border-radius: 2px;
-				-moz-border-radius: 2px;
-			    -webkit-border-radius: 2px;
-			    width: 100px;
-			    margin: 0 auto;
-			   /* opacity:0.7;*/
-			    text-align:center;
-				/*filter:alpha(opacity=70); /* For IE8 and earlier */
-			}
-			.staticBar{
-				-webkit-box-shadow: 0px 1px 3px rgba(59,57,59,1);
-				-moz-box-shadow:  0px 1px 3px rgba(59,57,59,1);
-				box-shadow: 0px 1px 3px rgba(59,57,59,1);
-				width:100%;	
-				position:fixed;
-				height:35px;
-				top:0;
-				background-color:#D8D8D8;
-				left:0;
-				padding-top:5px;
-				padding-bottom:5px;
-				text-align:center;
-				index:99;
-			}
-  		</style>
+		 
   		<script>
 			var locker = false;
 			
@@ -198,7 +123,7 @@
 				   	 	var total_item = data.data.length;
 				   	 	//loop date
 				   	 	if(total_item == 0){
-				   	 		str = "<div style='height:500px'>No record found</div>";
+				   	 		str = "<div style='height:500px'>沒有找到記錄</div>";
 						 	$("#total_item").val(total_item);
 					 		$("#dealer_order_list").html(str);
 				   	 	}else{
@@ -249,7 +174,7 @@
 					     
 						}else{
 							
-						 	str = "<div style='height:500px'>No record found</div>";
+						 	str = "<div style='height:500px'>沒有找到記錄</div>";
 						 	$("#total_item").val(total_item);
 					 		$("#dealer_order_list").html(str);
 						}
@@ -278,10 +203,10 @@
     	<input type="hidden" name="total_item" id="total_item" value="0">
     	<div class="staticBar">
 			<div id="monthyear" style="text-align:center;">
-    			Month
+    			月份
 	    		<select name="month" id="month" style="width:60px;">
 	    		</select>
-	    		Year
+	    		年度
 	    		<select id="year" name="year" style="width:80px;">
 	    		</select>
     		</div>
