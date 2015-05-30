@@ -1,0 +1,56 @@
+<Alloy>
+	<Window class="container" id="dealer_settings">
+		<Require src="_header" id="footer"></Require>
+		<View class="content" id="content">
+			<Label class="h2">設置</Label>
+			<ImageView class="separator" bottom=5></ImageView>
+			<ScrollView layout="vertical" height="78%" width="100%">
+				<View class="container" layout="vertical" top="5" height="50">
+					<Label class="form_label" title="Name" >员工代号</Label>
+					<Label class="form_label" id="dealer_id" color="#585858"></Label>
+				</View>
+				<View class="container" layout="horizontal"  height="60">
+					<Label class="form_label" title="Name" >员工名稱</Label>
+					<TextField class="text_input" id="fullname"  value=""  width="90%" hintText='請輸入员工名稱' />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Contact" >聯繫号码</Label>
+					<TextField class="number_input" id="mobile"  value="" hintText='請輸入聯繫号码'  width="90%" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Address" >地址</Label>
+					<TextField class="text_input" id="address"  hintText='請輸入地址' value=""  width="90%" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="City" >城市</Label>
+					<TextField class="text_input" id="city"  value="" hintText='請輸入城市'  width="90%" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Postcode" >郵政編碼</Label>
+					<TextField class="number_input" id="postcode" hintText='請輸入郵政編碼'  value=""  width="90%" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="State" >州／地区</Label>
+					<TextField class="text_input" id="state" onClick="chooseMState" editable="false"  hintText='請選擇州／地区'   width="90%" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Contact" >关注州／地区</Label>
+					<TextField class="text_input" id="prefer_state" onClick="chooseState" editable="false"  hintText='請選擇关注州／地区'   width="90%" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Email">新密碼</Label>
+					<TextField class="password_input" id="new_password" hintText='請輸入新密碼' value="" />
+				</View>
+				<View class="container" layout="horizontal" height="60">
+					<Label class="form_label" title="Email">確認密碼</Label>
+					<TextField class="password_input" id="confirm_password" hintText='請輸入確認密碼' value="" />
+				</View>
+
+				<Button textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" id="updateButton" onClick="doUpdates" title="更新"    />
+			</ScrollView>
+			
+		</View>
+		<Require src="_dealer_subfooter" id="r_sub_footer"></Require>
+		<Require src="_dealer_footer" id="footer"></Require>
+	</Window>
+</Alloy>
