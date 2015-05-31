@@ -1,6 +1,6 @@
 <Alloy>
 	<View id="header">
-		<Label id="backTitle" onTouchend="goBack">BACK</Label>
+		<Label id="backTitle" onTouchend="goBack">返回</Label>
 		<View class="border-line" left="25%" top="0%"></View>
 		<Label class="h1" id="appTitle">ONLINE TRADER</Label>
 	</View>

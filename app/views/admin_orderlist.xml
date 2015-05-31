@@ -6,7 +6,7 @@
 			<Label class="h1" id="appTitle">ONLINE TRADER</Label>
 		</View>
 		<View class="content_post" id="content">
-			<Label class="h2">DISPATCH - ORDER LIST</Label>
+			<Label class="h2">訂單列表</Label>
 			<ImageView class="separator" ></ImageView>
 		</View>
 		<View class="list_form" id="list_form">

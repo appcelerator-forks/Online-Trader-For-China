@@ -193,30 +193,30 @@
     <form id="post_form">
     	<div id="divHiddenInput"></div>
     	<table width="100%">
-    		<tr><td width="20%">Customer Name</td></tr>
+    		<tr><td width="20%">客戶名稱</td></tr>
     		<tr><td><input type="text" value="" name="name" class="text-input auto" placeholder="Enter Customer Name"></td></tr>
     		
     		
-    		<tr><td width="20%">Mobile</td></tr> 
+    		<tr><td width="20%">聯繫号码</td></tr> 
     		<tr><td><input type="tel" value="" name="mobile" class="text-input auto" placeholder="Enter Mobile Number"></td></tr> 
     		
-    		<tr><td width="20%">Send Date</td></tr>
+    		<tr><td width="20%">發送日期</td></tr>
     		<tr><td><input class="text-input" name="senddate" readonly type="text" id="datepicker"></td></tr>	
 			
-    		<tr><td width="20%">State</td></tr>
+    		<tr><td width="20%">省份</td></tr>
     		<tr><td><div id="country_selector"></div></td></tr>
     		
-			<tr id="areaDesc" style="display:none;"><td width="20%">Area</td></tr>
+			<tr id="areaDesc" style="display:none;"><td width="20%">地點</td></tr>
     		<tr id="areaSel" style="display:none;"><td><div id="area_selector"></div></td></tr>
 
-			<tr><td width="20%">Location</td></tr>
+			<tr><td width="20%">区域</td></tr>
     		<tr><td><input type="text" value="" name="location" class="text-input auto" placeholder="Enter Location"></td></tr>
 						
-    		<tr><td width="20%">Remark</td></tr>
+    		<tr><td width="20%">備註</td></tr>
     		<tr><td><textarea rows="4" cols="40" style="height:68px;"  name="remark" class="text-input auto" placeholder="Enter Remark"></textarea>
 			</td></tr>
     		
-    		<tr><td width="20%">Product</td></tr>
+    		<tr><td width="20%">產品</td></tr>
     		<tr><td align="left">
 	    			<div id="product_selector" style="padding-bottom:3px"></div>
 					<input type="tel" value="" min="1" name="quantity_form" id="quantity" placeholder="Enter Quantity"  class="small auto" />
@@ -228,7 +228,7 @@
 			<tr style="display:none;" id="product_details">
     			<td colspan="2">
 					<table width="100%">
-						<tr><td width="40%" align="left">Name</td><td width="30%" style="text-align:right;">Qty</td><td width="30%" style="text-align:right;">Total</td></tr>
+						<tr><td width="40%" align="left">產品</td><td width="30%" style="text-align:right;">数量</td><td width="30%" style="text-align:right;">總額</td></tr>
 						<tr><th width="100%" colspan=4><div style="border-bottom: 1px solid #9d0404;"></div></th></tr>
 						<tr><th width="100%" colspan=4><div class="product_content"></div></th></tr>
 					</table>
@@ -242,7 +242,7 @@
 							<th width="100%" colspan=3>
 								<table width="100%">
 									<tr>
-										<th width="40%" style="text-align:left;">Total</th>
+										<th width="40%" style="text-align:left;">總額</th>
 										<th width="30%" style="text-align:right;"><div id="product_grant_qty" >0</div></th>
 										<th width="30%" style="text-align:right;"><div id="product_grant_price"  >0.00</div></th>
 									</tr>
@@ -257,7 +257,10 @@
 				</td>
     		</tr>
     		<tr>
-    			<td colspan="2"><br/><div style="width:100%;margin:0 auto;text-align:center;"><img onClick="return submitOrder();" src="../images/btn-add-order.png" width="90%" ></div></td>
+    			<td colspan="2"><br/>
+    				<div style="width:100%;margin:0 auto;text-align:center;">
+    					<a class="btn btn-purple" href="javascript:void(0);" style="width:60%" onClick="return submitOrder();">呈交</a>
+    				</div></td>
     		</tr>
     		<tr><th width="100%" colspan=3><br/></th></tr>
     	</table>    	

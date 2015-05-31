@@ -5,10 +5,10 @@
 			<View class="border-line" left="25%" top="0%"></View>
 			<Label class="h1" id="appTitle">ONLINE TRADER</Label>
 			<View class="border-line" left="75%" top="0%"></View>
-			<Label class="rightNav" id="rightNav" mod="pos" onTouchend="popup">ADD</Label>
+			<Label class="rightNav" id="rightNav" mod="pos" onTouchend="popup">添加</Label>
 		</View>
 		<View class="content_post" id="content">
-			<Label class="h2">COURIER LIST</Label>
+			<Label class="h2">快遞訂單列表</Label>
 			<ImageView class="separator" ></ImageView>
 			
 		</View>

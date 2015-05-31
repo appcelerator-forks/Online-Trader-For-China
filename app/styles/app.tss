@@ -3,7 +3,7 @@
 },
 "Label":{
 	width: Titanium.UI.FILL,
-	color: "#e02222"
+	color: "#700202"
 },
 ".container": {
 	backgroundImage:"/images/bg.jpg",

@@ -7,26 +7,26 @@
 		<Require src="_header" id="header"></Require>
 		<View width="Ti.UI.FILL" height="Ti.UI.FILL" bottom="92" layout="vertical">
 			<View class="content" height="Ti.UI.SIZE">
-				<Label class="h2">DEALER - SUMMARY</Label>
+				<Label class="h2">零售商總結</Label>
 				<ImageView class="separator"></ImageView>
 				
 				<View height="30">
-					<Label top="10dp" left="10dp">Today Commission</Label>
+					<Label top="10dp" left="10dp">今日利潤</Label>
 					<Label class="summary_figure" id="todayCommission">0</Label>
-					<Label class="button" top="10dp" left="80%" mod="daily_commission" onClick="popup">DETAIL</Label>
+					<Label class="button" top="10dp" left="80%" mod="daily_commission" onClick="popup">詳情</Label>
 				</View>
 				
 				<View height="30">
-					<Label top="10dp" left="10dp">Monthly Commission</Label>
+					<Label top="10dp" left="10dp">每月利潤</Label>
 					<Label class="summary_figure" id="monthCommission">0</Label>
-					<Label class="button" top="10dp" left="80%" mod="monthly_commission_detail" onClick="popup">DETAIL</Label>							
+					<Label class="button" top="10dp" left="80%" mod="monthly_commission_detail" onClick="popup">詳情</Label>							
 				</View>
 				<View height="30">
-					<Label top="10dp" left="10dp">Daily Profit</Label>
+					<Label top="10dp" left="10dp">每日利潤</Label>
 					<Label class="summary_figure" id="dailyProfit">0</Label>
-					<Label class="button" top="10dp" left="80%" mod="daily_profit" onClick="popup">DETAIL</Label>								
+					<Label class="button" top="10dp" left="80%" mod="daily_profit" onClick="popup">詳情</Label>								
 				</View>
-				<Label class="h2">MONTHLY SALES</Label>
+				<Label class="h2">月度銷售</Label>
 				<ImageView class="separator"></ImageView>
 			</View>
 			<TableView height="Ti.UI.FILL" width="Ti.UI.FILL" id="inventoryTableView"> 

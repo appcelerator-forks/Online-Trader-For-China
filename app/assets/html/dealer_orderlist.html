@@ -139,15 +139,15 @@
 							 statusIcon = "<img src='../images/status-"+val.order.status+".png'  style='width:70px; float:right;'>";
 						     str += "<table onClick='return orderDetail("+val.order.o_id+");' class='table_"+index+" boxes "+unread+" "+isCancelled+"' width='100%' id='table_"+ val.order.o_id+"'>";
 						     str += "<tr><th width='20%'>Inv. No.</th><td width='70%' style='color:#525252'> : "+ val.order.o_id+"</td><td rowspan=4 valign=middle>"+statusIcon+"</td></tr>";
-						      	str += "<tr><th width='20%' valign=top>Customer</th><td valign=top style='color:#525252'> : "+ val.order.name+"</td></tr>";
+						      	str += "<tr><th width='20%' valign=top>客戶名稱</th><td valign=top style='color:#525252'> : "+ val.order.name+"</td></tr>";
 						      	
 						      	if(val.order.areaname != ""){
-						      		str += "<tr><th width='20%' valign=top>Location</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.areaname+", "+val.order.area+"</td></tr>";
+						      		str += "<tr><th width='20%' valign=top>区域</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.areaname+", "+val.order.area+"</td></tr>";
 						      	}else{
-						      		str += "<tr><th width='20%' valign=top>Location</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.area+"</td></tr>";
+						      		str += "<tr><th width='20%' valign=top>区域</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.area+"</td></tr>";
 						      	}
 						     
-						      	str += "<tr><th width='20%'>Post On</th><td valign=top style='color:#525252'> : "+ val.order.created+"</td></tr>";
+						      	str += "<tr><th width='20%'>发布于</th><td valign=top style='color:#525252'> : "+ val.order.created+"</td></tr>";
 								var prod_text = "";
 								var prod_counter = 1;
 								// loop product
@@ -173,7 +173,7 @@
 						 });
 						 
 						}else{
-						 	str = "<div style='height:500px'>No record found</div>";
+						 	str = "<div style='height:500px'>沒有找到記錄</div>";
 						}
 					 
 						$("#total_item").val(total_item);

@@ -6,11 +6,11 @@
 			<View class="border-line" left="25%" top="0%"></View>
 			<Label class="h1" id="appTitle">ONLINE TRADER</Label>
 			<View class="border-line" left="75%" top="0%"></View>
-			<Label class="rightNav" id="rightNav" mod="newpost" onTouchend="popup">ADD</Label>
+			<Label class="rightNav" id="rightNav" mod="newpost" onTouchend="popup">添加</Label>
 		
 		</View>
 		<View class="content_post" id="content">
-			<Label class="h2">DEALER - ORDER LIST</Label>
+			<Label class="h2">訂單列表</Label>
 			<ImageView class="separator" ></ImageView>
 		</View>
 		<View class="list_form" id="list_form">
