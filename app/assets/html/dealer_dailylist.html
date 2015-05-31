@@ -18,7 +18,7 @@
 			  	Ti.App.addEventListener("app:orderListParam", orderListParam);
 				
 				function refreshPage(e){
-					noty({"text":"Refreshing list...","layout":"top","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":100,"timeout":3000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
+					noty({"text":"更新列表...","layout":"top","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":100,"timeout":3000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
         		
             		var listUrl = localStorage.getItem("url");
     
@@ -56,7 +56,7 @@
 					
 				   	 if(data.status == 'success'){
 						 str += "<table cellpadding='0' cellspacing='0' style='width:90%;' class='bordered'>";
-						 str += "<tr><th  id='titleName'>Inv. No.</th><th>Customer</th><th>Dealer</th><th>Product</th><th>Amount</th></tr>";
+						 str += "<tr><th  id='titleName'>訂單编号</th><th>Customer</th><th>零售商</th><th>產品</th><th>总数</th></tr>";
 					     $.each( data.data, function( key, items ) {
 					     	
 					    	 var day_item   = 0;
@@ -70,7 +70,7 @@
 							$("#total_item").val(total_item);
 					 		$("#dealer_order_list").html(str);
 						}else{
-						 	str = "<div style='height:500px'>No record found</div>";
+						 	str = "<div style='height:500px'>沒有找到記錄</div>";
 						 	$("#total_item").val(total_item);
 					 		$("#dealer_order_list").html(str);
 						}

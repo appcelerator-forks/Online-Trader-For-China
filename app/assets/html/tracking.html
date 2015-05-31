@@ -33,7 +33,7 @@
 		 
 		 function refresh(e){
 		            loadTrackingTable();
-		            noty({"text":"Tracking replied","layout":"center","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":500,"timeout":4000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
+		            noty({"text":"追踪信息已回复","layout":"center","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":500,"timeout":4000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
 		        }
 		        
 	     function loadTrackingTable(){
@@ -73,12 +73,12 @@
         </style>
     </head>
 	<body onload="toBottom();">
-		<div id="track_data" style="display:inline;color:#243F8B;font-weight:bold;">Collecting tracking info...</div>
+		<div id="track_data" style="display:inline;color:#243F8B;font-weight:bold;">收集追踪信息...</div>
 		<div style="border-bottom:1px solid #555; padding-bottom:10px; margin-bottom: 10px;width:90%">
-			Reference ID : <span id="refno"></span><br/>
-			Customer Name : <span id="customer"></span><br/>
-			Location : <span id="location"></span><br/>
-			Mobile : <span id="mobile"></span>
+			參考編號 : <span id="refno"></span><br/>
+			客戶名稱 : <span id="customer"></span><br/>
+			地点 : <span id="location"></span><br/>
+			聯繫号码 : <span id="mobile"></span>
 		</div>
 		<div id="trackingTable" style="margin:0 auto; width:90%;"></div>
 		

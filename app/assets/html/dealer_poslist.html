@@ -18,7 +18,7 @@
 			  	Ti.App.addEventListener("app:posListParam", posListParam);
 				
 				function refreshPage(e){
-					noty({"text":"Refreshing list...","layout":"top","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":100,"timeout":3000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
+					noty({"text":"更新訂單列表...","layout":"top","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":100,"timeout":3000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
         		
             		var listUrl = localStorage.getItem("posUrl");
             		var year =$( "#year" ).val();
@@ -136,15 +136,15 @@
 						     	
 						      	str += "<table onClick='return posDetail("+val.order.p_id+");' class='table_"+index+" boxes' width='100%' id='table_"+ val.order.p_id+"'>";
 
-						      	str += "<tr><th width='20%'>Customer</th><td width='70%' style='color:#525252'> : "+ val.order.receiver_name+"</td><td rowspan=4 valign=middle></td></tr>";
-						      	str += "<tr><th width='20%' valign=top>Mobile</th><td valign=top style='color:#525252'> : <a href='tel:"+val.order.receiver_mobile+"'>"+ val.order.receiver_mobile+"</a></td></tr>";
+						      	str += "<tr><th width='20%'>客戶名稱</th><td width='70%' style='color:#525252'> : "+ val.order.receiver_name+"</td><td rowspan=4 valign=middle></td></tr>";
+						      	str += "<tr><th width='20%' valign=top>聯繫号码</th><td valign=top style='color:#525252'> : <a href='tel:"+val.order.receiver_mobile+"'>"+ val.order.receiver_mobile+"</a></td></tr>";
 						      	if(val.order.receiver_state == "Others"){
-						      		str += "<tr><th width='20%' valign=top>Location</th><td valign=top style='color:#525252'> : "+ val.order.receiver_city+", "+val.order.receiver_others+"</td></tr>";
+						      		str += "<tr><th width='20%' valign=top>区域</th><td valign=top style='color:#525252'> : "+ val.order.receiver_city+", "+val.order.receiver_others+"</td></tr>";
 						      	}else{
-						      		str += "<tr><th width='20%' valign=top>Location</th><td valign=top style='color:#525252'> : "+ val.order.receiver_city+", "+val.order.receiver_state+"</td></tr>";
+						      		str += "<tr><th width='20%' valign=top>区域</th><td valign=top style='color:#525252'> : "+ val.order.receiver_city+", "+val.order.receiver_state+"</td></tr>";
 						      	}
 						      	
-						      	str += "<tr><th width='20%'>Tracking Code</th><td valign=top style='color:#525252'> : "+ val.order.tracking_code+"</td></tr>";
+						      	str += "<tr><th width='20%'>追踪代碼</th><td valign=top style='color:#525252'> : "+ val.order.tracking_code+"</td></tr>";
 								
 								var prod_text = "";
 								var prod_counter = 1;
@@ -159,7 +159,7 @@
 									}
 									prod_counter++;
 								});
-								str += "<tr><th width='20%' valign='top'>Products</th><td valign=top style='color:#525252'> : "+ prod_text +"</td></tr>";
+								str += "<tr><th width='20%' valign='top'>產品</th><td valign=top style='color:#525252'> : "+ prod_text +"</td></tr>";
 									
 						      	str += "</table>";
 						      	total_item++;

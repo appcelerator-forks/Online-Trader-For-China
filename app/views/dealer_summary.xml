@@ -2,7 +2,7 @@
 	<Window class="container" id="dealer_summary" height="Ti.UI.FILL">
 		<View layout="vertical" id="loadingBar" height="0" width="100" borderRadius="15" top="0" opacity="1" backgroundColor="#2E2E2E" >
 				<ActivityIndicator  id="activityIndicator" />
-				<Label text="Loading" left="20" top="10" color="#ffffff" />
+				<Label text="加載..." left="20" top="10" color="#ffffff" />
 		</View>
 		<Require src="_header" id="header"></Require>
 		<View width="Ti.UI.FILL" height="Ti.UI.FILL" bottom="92" layout="vertical">

@@ -59,11 +59,11 @@ function validateForm(){
 	var prod = findTotalQty();
 	
 	if(name == ""){
-		alert("Customer name cannot be empty");
+		alert("客戶名稱不可空缺");
 		return false;
 	}
 	if(mobile == ""){
-		alert("Mobile number cannot be empty");
+		alert("聯繫号码不可空缺");
 		return false;
 	}
 	/**if(location == ""){
@@ -72,11 +72,11 @@ function validateForm(){
 	}
 	**/
 	if(area == ""){
-		alert("Area cannot be empty");
+		alert("地點不可空缺");
 		return false;
 	}
 	if(prod == 0){
-		alert("Product cannot be empty");
+		alert("產品不可空缺");
 		return false;
 	}
 	
@@ -100,62 +100,62 @@ function validatePosForm(){
 	var r_others = $('input[name="receiver_others"]').val();
 	var prod = $('.productName').length;
 	if(s_name == ""){
-		alert("Sender name cannot be empty");
+		alert("發送人姓名不可空缺");
 		return false;
 	}
 	if(r_name == ""){
-		alert("Receiver name cannot be empty");
+		alert("收貨人名稱不可空缺");
 		return false;
 	}
 	
 	if(s_mobile == ""){
-		alert("Sender mobile number cannot be empty");
+		alert("發送人聯繫号码不可空缺");
 		return false;
 	}
 	if(r_mobile == ""){
-		alert("Receiver mobile number cannot be empty");
+		alert("收貨人聯繫号码不可空缺");
 		return false;
 	}
 	if(s_address == ""){
-		alert("Sender address cannot be empty");
+		alert("發送人地址不可空缺");
 		return false;
 	}
 	if(r_address == ""){
-		alert("Receiver address cannot be empty");
+		alert("收貨人地址不可空缺");
 		return false;
 	}
 	if(s_city == ""){
-		alert("Sender city cannot be empty");
+		alert("發送人城市不可空缺");
 		return false;
 	}
 	if(r_city == ""){
-		alert("Receiver city cannot be empty");
+		alert("收貨人城市不可空缺");
 		return false;
 	}
 	if(s_poscode == ""){
-		alert("Sender postcode cannot be empty");
+		alert("發送人郵編不可空缺");
 		return false;
 	}
 	if(r_poscode == ""){
-		alert("Receiver postcode cannot be empty");
+		alert("收貨人郵編不可空缺");
 		return false;
 	}
 	if(s_state == ""){
-		alert("Sender state cannot be empty");
+		alert("發送人省份不可空缺");
 		return false;
 	}
 	if(r_state == ""){
-		alert("Receiver state cannot be empty");
+		alert("收貨人省份不可空缺");
 		return false;
 	}else if(r_state == "Others"){
 		if(r_others == ""){
-			alert("Receiver state cannot be empty");
+			alert("收貨人省份不可空缺");
 			return false;
 		}
 	}
 	
 	if(prod == 0){
-		alert("Product cannot be empty");
+		alert("產品不可空缺");
 		return false;
 	}
 	
@@ -192,7 +192,7 @@ function getStateSelector(e){
 		    	localStorage.setItem("stateArea",JSON.stringify(data.area));
 		    	
 		    	var item = '<select name="area" class="selector auto" id="selector_area" onChange="loadArea();" style="float:left;width:100%; ">';
-				item += '<option value="">State</option>';
+				item += '<option value="">省份</option>';
 				$.each( data.state, function( key, val ) {
 					var is_selected ="";
 					if(preferred == key){
@@ -205,7 +205,7 @@ function getStateSelector(e){
 				
 				if(data.area[preferred]){
 					var item2 = '<select name="area2" class="selector auto" id="selector_area2" onChange="loadArea2();" style="float:left;width:100%; ">';
-					item2 += '<option value="">Area</option>';
+					item2 += '<option value="">區域</option>';
 				    $.each( data.area[preferred], function( area_id, area_name ) {
 				    	
 				      	item2 += '<option value='+area_id+'>'+ area_name + '</option>';
@@ -218,8 +218,7 @@ function getStateSelector(e){
 					$("#areaSel").show();	
 				    $("#area_selector").show();	
 				    $("#area_selector").html(item2);	
-				}
-		    	
+				} 
 			    return true;
 		    }
 		});
@@ -234,7 +233,7 @@ function getProductelector(e){
 	    	getProductelector(e);
 	    }else{
 	    	var item = '<select name="sel_product" class="selector auto" id="sel_product" style="width:100%;">';
-	    	item += '<option value="">-- Product--</option>';
+	    	item += '<option value="">-- 產品--</option>';
 		    $.each( data, function( key, val ) {
 		      localStorage.setItem("prodName"+val.p_id, val.name);
     		  localStorage.setItem("prodQty"+val.p_id, val.quantity);

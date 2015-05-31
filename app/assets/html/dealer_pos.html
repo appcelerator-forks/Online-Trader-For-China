@@ -153,7 +153,7 @@
 						var res = JSON.parse(data);
 						if(res.status == 'success'){
 							
-							noty({"text":"Pos order added successfully!","layout":"center","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":500,"timeout":4000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
+							noty({"text":"快遞訂單添加成功!","layout":"center","type":"success","animateOpen":{"height":"toggle"},"animateClose":{"height":"toggle"},"speed":500,"timeout":4000,"closeButton":false,"closeOnSelfClick":true,"closeOnSelfOver":false,"modal":false});
 							setTimeout(function(){Ti.App.fireEvent('addOrderComplete', {});},2000);
 							//;
 						}else{
@@ -172,24 +172,24 @@
     	<div id='sender_header' class='tableTitle'>發送人资料</div>
     	<table width="100%">
     		<tr><td width="20%">發送人姓名</td></tr>
-    		<tr><td><input type="text" value="" name="sender_name" class="text-input" placeholder="Enter Sender Customer Name"></td></tr>
+    		<tr><td><input type="text" value="" name="sender_name" class="text-input" placeholder="请输入發送人姓名"></td></tr>
     		
     		
     		<tr><td width="20%">發送人聯繫</td></tr> 
-    		<tr><td><input type="tel" value="" name="sender_mobile" class="text-input" placeholder="Enter Sender Mobile Number"></td></tr> 
+    		<tr><td><input type="tel" value="" name="sender_mobile" class="text-input" placeholder="请输入發送人聯繫"></td></tr> 
     		
     		<tr><td width="20%">發送人地址</td></tr>
-    		<tr><td><textarea rows="4" cols="40" style="height:68px;border:1px solid #A4A4A4;"  name="sender_address" class="text-input" placeholder="Enter Sender Address"></textarea></td></tr>
+    		<tr><td><textarea rows="4" cols="40" style="height:68px;border:1px solid #A4A4A4;"  name="sender_address" class="text-input" placeholder="请输入發送人地址"></textarea></td></tr>
 			
 			<tr><td width="20%">城市</td></tr>
-    		<tr><td><input type="text" value="" name="sender_city" class="text-input" placeholder="Enter Sender City"></td></tr>
+    		<tr><td><input type="text" value="" name="sender_city" class="text-input" placeholder="请输入城市"></td></tr>
 			
 			<tr><td width="20%">郵編</td></tr> 
-    		<tr><td><input type="tel" value="" name="sender_postcode" class="text-input" placeholder="Enter Sender Postcode"></td></tr> 
+    		<tr><td><input type="tel" value="" name="sender_postcode" class="text-input" placeholder="请输入郵編"></td></tr> 
     		
-			<tr><td width="20%">州属</td></tr>
+			<tr><td width="20%">省份</td></tr>
     		<tr><td><select name="sender_state" class="text-input"  style="width: 100%">
-    				<option value="">请选择發送人州属</option>
+    				<option value="">请选择發送人省份</option>
     				<option value="1">北京市</option>
 					<option value="2">天津市</option>
 					<option value="3">上海市</option>
@@ -230,22 +230,22 @@
 		<table>
 			
     		<tr><td width="20%">收貨人名稱</td></tr>
-    		<tr><td><input type="text" value="" name="receiver_name" class="text-input" placeholder="Enter Receiver Customer Name"></td></tr>
+    		<tr><td><input type="text" value="" name="receiver_name" class="text-input" placeholder="请输入收貨人名稱"></td></tr>
     		
     		
     		<tr><td width="20%">聯繫号码</td></tr> 
-    		<tr><td><input type="tel" value="" name="receiver_mobile" class="text-input" placeholder="Enter Receiver Mobile Number"></td></tr> 
+    		<tr><td><input type="tel" value="" name="receiver_mobile" class="text-input" placeholder="请输入聯繫号码"></td></tr> 
     		
     		
     		<tr><td width="20%">地址</td></tr>
-    		<tr><td><textarea rows="4" cols="40" style="height:68px;border:1px solid #A4A4A4;"  name="receiver_address" class="text-input" placeholder="Enter Receiver Address"></textarea>
+    		<tr><td><textarea rows="4" cols="40" style="height:68px;border:1px solid #A4A4A4;"  name="receiver_address" class="text-input" placeholder="请输入地址"></textarea>
     			</td></tr>
 			
 			<tr><td width="20%">城市</td></tr>
-    		<tr><td><input type="text" value="" name="receiver_city" class="text-input" placeholder="Enter Receiver City"></td></tr>
+    		<tr><td><input type="text" value="" name="receiver_city" class="text-input" placeholder="请输入城市"></td></tr>
 			
 			<tr><td width="20%">郵編</td></tr> 
-    		<tr><td><input type="tel" value="" name="receiver_postcode" class="text-input" placeholder="Enter Receiver Postcode"></td></tr> 
+    		<tr><td><input type="tel" value="" name="receiver_postcode" class="text-input" placeholder="请输入郵編"></td></tr> 
     		
 			<tr><td width="20%">省份</td></tr>
     		<tr><td>
@@ -285,14 +285,14 @@
     			</select>
     		</td></tr>
 			<tr style="display:none;" id="tr_others_desc"><td width="20%">其他國家/地區</td></tr>
-    		<tr style="display:none;" id="tr_others_value"><td><input type="text" value="" name="receiver_others" class="text-input" placeholder="Enter Receiver Others State/Country"></td></tr>
+    		<tr style="display:none;" id="tr_others_value"><td><input type="text" value="" name="receiver_others" class="text-input" placeholder="请输入其他國家/地區"></td></tr>
 			
 		</table>
 		
 		<div id='receiver_header' class='tableTitle'>快遞訂單備註</div>
 		<table>
 			<tr><td width="20%">訂單備註</td></tr>
-	    	<tr><td><textarea rows="4" cols="40" style="height:68px;"  name="remark" class="text-input" placeholder="Enter Courier Remark"></textarea></td></tr>
+	    	<tr><td><textarea rows="4" cols="40" style="height:68px;"  name="remark" class="text-input" placeholder="请输入快遞訂單備註"></textarea></td></tr>
 		</table>	
 		<br/>
 		
@@ -300,10 +300,9 @@
     		<tr><td width="20%">產品</td></tr>
     		<tr><td align="left">
 	    			<div id="product_selector" style="padding-bottom:3px"></div>
-					<input type="tel" value="" min="1" name="quantity_form" id="quantity" placeholder="Enter Quantity"  class="small" />
-					<input type="number" value="" min="1" name="price_form" id="price" placeholder="Enter Price" class="small" style="margin-left:3px" />
-					
-					<img onClick="return addItem();" src="../images/btn-add.png"  style="float:right;width:40px;height:34px;vertical-align: middle;padding-left:3px;">
+					<input type="tel" value="" min="1" name="quantity_form" id="quantity" placeholder="请输入数量"  class="small" />
+					<input type="number" value="" min="1" name="price_form" id="price" placeholder="请输入价钱" class="small" style="margin-left:3px" />
+					<a class="btn btn-purple" href="javascript:void(0);" style="float:right;width:40px;" onClick="return addItem();">添加</a>  
 				</td>
 			</tr>
 			<tr style="display:none;" id="product_details">

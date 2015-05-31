@@ -22,13 +22,13 @@
 	            localStorage.setItem("m_url", e.m_url);
 	            localStorage.setItem("m_userstat", e.m_userstat);
 	            localStorage.setItem("userstat", e.userstat);
-	            localStorage.setItem("tableTitle", "Location");
+	            localStorage.setItem("tableTitle", "省份");
 	            localStorage.setItem("targetURL", e.url); //Default
 	            drawTable(e.url+"&date="+dateToday);
 	            
 				$( "#datepicker" ).datepicker({
 				    onSelect: function(dateText) {
-				    	$("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+				    	$("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>加載中...</div>");
 				        thedate =$( "#datepicker" ).val();
 				       
 	        			$( "#datepicker" ).val(thedate);
@@ -45,7 +45,7 @@
 				var month =$( "#month" ).val();
 				var year =$( "#year" ).val();
 				var dateRpt = localStorage.getItem("targetURL");
-				$("#dealer_statistic_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+				$("#dealer_statistic_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>加載中...</div>");
 				
 				drawTable(dateRpt+"&date="+thedate+"&month="+month+"&year="+year);
 			}
@@ -79,7 +79,7 @@
 				   	 		
 				   	 	}else{
 				   	 		if(currentOption == "monthly_location"){
-				   	 			str += "<tr><th width='50%' id='titleName'>"+ localStorage.getItem("tableTitle")+"</th><th width='50%' id='titleTotal'>Total</th></tr>";
+				   	 			str += "<tr><th width='50%' id='titleName'>"+ localStorage.getItem("tableTitle")+"</th><th width='50%' id='titleTotal'>总数</th></tr>";
 				   	 			if(data.data == ""){
 							  		str += "<tr><td colspan='2' style='text-align:center;'>沒有找到記錄</td></tr>";
 							  	}else{
@@ -90,7 +90,7 @@
 									});
 							  	}
 				   	 		}else{
-					   	 		str += "<tr><th width='70%' id='titleName'>"+ localStorage.getItem("tableTitle")+"</th><th width='30%' id='titleTotal'>Total Order</th></tr>";
+					   	 		str += "<tr><th width='70%' id='titleName'>"+ localStorage.getItem("tableTitle")+"</th><th width='30%' id='titleTotal'>总数</th></tr>";
 						  	
 							  	if(data.data == ""){
 							  		str += "<tr><td colspan='2' style='text-align:center;'>沒有找到記錄</td></tr>";
@@ -123,14 +123,14 @@
 					$("#monthyear").hide();
 	  				$("#datepicker").show();
 				}else if(options == "location"){
-					Ti.App.fireEvent('changeTitle', {title: "銷售按区域"  });
-					localStorage.setItem("tableTitle", "区域");
+					Ti.App.fireEvent('changeTitle', {title: "銷售按省份"  });
+					localStorage.setItem("tableTitle", "省份");
 					localStorage.setItem("targetURL", localStorage.getItem("url"));
 					$("#monthyear").hide();
 	  				$("#datepicker").show();
 				}else if(options == "monthly_location"){
-					Ti.App.fireEvent('changeTitle', {title: "每月銷售按区域"  });
-					localStorage.setItem("tableTitle", "区域");
+					Ti.App.fireEvent('changeTitle', {title: "每月銷售按省份"  });
+					localStorage.setItem("tableTitle", "省份");
 					localStorage.setItem("targetURL", localStorage.getItem("m_userstat"));
 					$("#monthyear").show();
 	  				$("#datepicker").hide();
