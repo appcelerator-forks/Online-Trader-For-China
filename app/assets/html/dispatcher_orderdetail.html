@@ -141,7 +141,7 @@
 			areaArr  = JSON.parse(areaList);
 			if(areaArr[area]){
 				var item2 = '<select name="area2" class="selector" id="selector_area2" onChange="loadArea2();" style="float:left;width:100%; ">';
-			    item2 += '<option value="">Area</option>';
+			    item2 += '<option value="">省份</option>';
 				$.each( areaArr[area], function( area_id, area_name ) {
 					item2 += '<option value='+area_id+'>'+ area_name + '</option>';
 				});
@@ -280,33 +280,33 @@
     		<tr><td width="20%" class="field">Dealer Info</td></tr>
     		<tr><td class="value"><div id="dealer_info"></div></td></tr>
     		
-    		<tr><td width="20%" class="field">Customer Name</td></tr>
+    		<tr><td width="20%" class="field">客戶名稱</td></tr>
     		<tr><td class="value"><div id="name"></div></td></tr>
     		
     		
-    		<tr><td class="field" width="20%">Mobile</td></tr> 
+    		<tr><td class="field" width="20%">聯繫号码</td></tr> 
     		<tr><td class="value"><div id="mobile"></div></td></tr> 
     		
-    		<tr><td class="field" width="20%">Send Date</td></tr>
+    		<tr><td class="field" width="20%">發送日期</td></tr>
     		<tr><td class="value"><input class="text-input" name="senddate" readonly type="text" id="datepicker"></td></tr>
     		
-    		<tr><td class="field" width="20%">State</td></tr>
+    		<tr><td class="field" width="20%">省份</td></tr>
     		<tr><td class="value"><div id="country_selector"></div></td></tr>
 			
-			<tr id="areaDesc" style="display:none;"><td class="field" width="20%">Area</td></tr>
+			<tr id="areaDesc" style="display:none;"><td class="field" width="20%">地點</td></tr>
     		<tr id="areaSel" style="display:none;"><td class="value"><div id="area_selector"></div></td></tr>
 			
-			<tr><td class="field" width="20%">Location</td></tr>
+			<tr><td class="field" width="20%">区域</td></tr>
     		<tr><td class="value"><input type="text" value="" name="location" class="text-input" placeholder="Enter Location"></td></tr>
 
-    		<tr><td class="field" width="20%">Remark</td></tr>
+    		<tr><td class="field" width="20%">備註</td></tr>
     		<tr><td class="value"><div id="remark"></div></td></tr>
     		
-    		<tr><td class="field" width="20%">Product</td></tr>
+    		<tr><td class="field" width="20%">產品</td></tr>
     		<tr><td class="value" align="left">
 	    			<div id="product_selector" style="padding-bottom:3px"></div>
-					<input type="tel" value="" min="1" name="quantity_form" id="quantity" placeholder="Enter Quantity"  class="small" />
-					<input type="number" value="" min="1" name="price_form" id="price" placeholder="Enter Price" class="small" style="margin-left:3px" />
+					<input type="tel" value="" min="1" name="quantity_form" id="quantity" placeholder="请输入数量"  class="small" />
+					<input type="number" value="" min="1" name="price_form" id="price" placeholder="请输入价钱" class="small" style="margin-left:3px" />
 
 					<img onClick="return addItem();" src="../images/btn-add.png"  style="float:right; vertical-align: middle;padding-left:3px;">
 				</td>
@@ -315,7 +315,7 @@
     			<td colspan="2">
 					<table width="100%">
 						<table width="100%">
-						<tr><td width="40%" class="field" align="left">Name</td><td class="field" width="30%" style="text-align:right;">Qty</td><td class="field" width="30%" style="text-align:right;">Total</td></tr>
+						<tr><td width="40%" class="field" align="left">產品</td><td class="field" width="30%" style="text-align:right;">数量</td><td class="field" width="30%" style="text-align:right;">總額</td></tr>
 						<tr><th width="100%" colspan=4><div style="border-bottom: 1px solid #444;"></div></th></tr>
 						<tr><th width="100%" colspan=4><div id="product_content" class="product_content"></div></th></tr>
 					
@@ -330,7 +330,7 @@
 							<th width="100%" colspan=3>
 								<table width="100%">
 									<tr>
-										<th width="40%" style="text-align:left;">Total</th>
+										<th width="40%" style="text-align:left;">總額</th>
 										<th width="30%" style="text-align:right;"><div id="product_grant_qty" >0</div></th>
 										<th width="30%" style="text-align:right;"><div id="product_grant_price"  >0.00</div></th>
 									</tr>
@@ -350,7 +350,7 @@
     		<tr><th width="100%" colspan=3><br/></th></tr>
     	</table>    	
     </form>
-    <div id="pop_data" style="display:inline;color:#243F8B;font-weight:bold;">Populating data...</div>
+    <div id="pop_data" style="display:inline;color:#243F8B;font-weight:bold;">填充訂單资料...</div>
     <div id="loading" style="display:none;margin:0 auto; padding:10px; width:100%;text-align: center;"><img src="../images/loading.gif"></div>
     <script>
        $(document).ready(function(){

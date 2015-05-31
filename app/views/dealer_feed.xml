@@ -17,7 +17,7 @@
 		</View>	
 		<View layout="vertical" id="loadingBar" height="0" width="100" borderRadius="15" top="0" opacity="1" backgroundColor="#2E2E2E" >
 				<ActivityIndicator  id="activityIndicator" />
-				<Label text="Loading" left="20" top="10" color="#ffffff" />
+				<Label text="加载中..." left="20" top="10" color="#ffffff" />
 			</View>
 		<Require type="view" src="_dealer_footer" id="footer"/>
 	</Window>

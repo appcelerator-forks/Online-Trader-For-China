@@ -5,7 +5,7 @@
 		</View>
 		<View layout="vertical" id="loadingBar" height="0" width="100" borderRadius="15" top="230" zIndex="99" opacity="1" backgroundColor="#2E2E2E" >
 				<ActivityIndicator  id="activityIndicator" />
-				<Label text="Loading" left="20" top="10" color="#ffffff" />
+				<Label text="登陆中..." left="20" top="10" color="#ffffff" />
 		</View>
 		<View class="content" id="content">
 			<ScrollView showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" height="320" width="100%">

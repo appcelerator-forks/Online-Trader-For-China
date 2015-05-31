@@ -3,7 +3,7 @@
 		<Require src="_header" id="header"></Require>
 		<View class="content" id="content">
 			<Label class="h2">設置</Label>
-			<ImageView class="separator" bottom=5></ImageView>
+			<ImageView class="separator" bottom="5"></ImageView>
 			<ScrollView layout="vertical" height="78%" width="100%">
 			
 				<View class="container" layout="horizontal" top="5" height="60">

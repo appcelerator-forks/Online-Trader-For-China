@@ -18,7 +18,7 @@
 		<View class="details_form"  >
 			<TextArea id="textArea" id="trackingMessage" suppressReturn="false"
             borderWidth="2" borderColor="#bbb" borderRadius="2"
-            color="#888" textAlign="left" hintText="Enter tracking message"
+            color="#888" textAlign="left" hintText="请输入追踪信息"
             top="5" width="90%" height="150" />
 		</View>
 		

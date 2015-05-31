@@ -1,8 +1,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>SummaryInventory</title>
-		<meta name="author" content="yikonn.lau" />
+		<title>SummaryInventory</title> 
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
 		<!-- Date: 2014-03-13 -->
 		<link rel="stylesheet" href="js/jquery-ui.css">
@@ -10,14 +9,10 @@
   		<script src="js/jquery-ui.js"></script>
   		<link rel="stylesheet" href="css/main.css">
 	</head>
-	<script>
-			
-		
+	<script> 
 		    
-			$( document ).ready(function() {
-
-				Ti.App.addEventListener("app:urlFromApp", urlFromApp);
-				
+			$( document ).ready(function() { 
+				Ti.App.addEventListener("app:urlFromApp", urlFromApp); 
 				function urlFromApp(e){
 					url = e.url;
 		        	$("#inventory").html("<div style='display:inline;color:#243F8B;font-weight:bold;'></div>");

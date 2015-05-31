@@ -16,8 +16,9 @@ if(ses == null){
 	     // function called when the response data is available
 	     onload : function(e) {
 	         var res = JSON.parse(this.responseText);
-	        //console.log(res);
+	          
 	         if(res.status == "success"){
+	         	
 	         	var rl = Ti.App.Properties.getString('roles');
 	
 				if(rl == 'dealer' || rl == 'staff'){
@@ -83,7 +84,13 @@ function doLogin(e) {
      onload : function(e) { 
          var res = JSON.parse(this.responseText);
          if(res.status == "success"){
-         	  
+         	 if(res.data.roles == "admin"){
+	         	createAlert('权限拒绝','您的户口没权限使用这软件');   
+	         	$.activityIndicator.hide(); 
+				$.loadingBar.opacity = "0";
+				$.loadingBar.height = "0";
+	        	return false;      	 	
+	        }  
          	Ti.App.Properties.setString('roles',res.data.roles);
 			Ti.App.Properties.setString('session',res.data.session);
 			
@@ -106,7 +113,7 @@ function doLogin(e) {
 			 $.loadingBar.height = "0";
 			
          }else{
-         	createAlert('Authentication warning',res.data);
+         	createAlert('驗證警告',res.data);
          	$.activityIndicator.hide(); 
 			$.loadingBar.opacity = "0";
 			$.loadingBar.height = "0";
@@ -117,7 +124,7 @@ function doLogin(e) {
      	$.activityIndicator.hide(); 
 		$.loadingBar.opacity = "0";
 		$.loadingBar.height = "0";
-        createAlert('Network declined','Failed to contact with server. Please make sure your device are connected to internet.');
+        createAlert('网络警告','無法與服務器聯繫。請確保你的設備連接到互聯網。');
      },
      timeout : 60000  // in milliseconds
  });

@@ -2,7 +2,7 @@
 	<Window class="container" id="dealer_orderlist">
 		<Require src="_subheader"></Require>
 		<View class="content" id="content">
-			<Label class="h2">DAILY COMMISSION LIST</Label>
+			<Label class="h2">每日利潤列表</Label>
 			<ImageView class="separator" ></ImageView>
 			<View class="post_form"  >
 		        	<WebView id="orderlistview" height="auto" disableBounce="true" url="/html/dealer_dailylist.html" />

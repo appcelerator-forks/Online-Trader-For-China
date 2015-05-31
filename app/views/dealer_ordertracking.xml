@@ -10,7 +10,7 @@
 				<Label id="rightMenu" mod="composetracking" onTouchend="popup">添加</Label>
 
 		</View>
-		<ImageView class="separator" bottom=5></ImageView>
+		<ImageView class="separator" bottom="5"></ImageView>
 			<WebView id="webview_tracking" width="100%" top="50" height="90%" disableBounce="true" onLoad="construct"  url="/html/tracking.html" />
 	</Window>
 </Alloy>

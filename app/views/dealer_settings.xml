@@ -3,7 +3,7 @@
 		<Require src="_header" id="footer"></Require>
 		<View class="content" id="content">
 			<Label class="h2">設置</Label>
-			<ImageView class="separator" bottom=5></ImageView>
+			<ImageView class="separator" bottom="5"></ImageView>
 			<ScrollView layout="vertical" height="78%" width="100%">
 				<View class="container" layout="vertical" top="5" height="50">
 					<Label class="form_label" title="Name" >經銷商代号</Label>
@@ -30,12 +30,12 @@
 					<TextField class="number_input" id="postcode" hintText='請輸入郵政編碼'  value=""  width="90%" />
 				</View>
 				<View class="container" layout="horizontal" height="60">
-					<Label class="form_label" title="State" >州／地区</Label>
-					<TextField class="text_input" id="state" onClick="chooseMState" editable="false"  hintText='請選擇州／地区'   width="90%" />
+					<Label class="form_label" title="State" >省份</Label>
+					<TextField class="text_input" id="state" onClick="chooseMState" editable="false"  hintText='請選擇省份'   width="90%" />
 				</View>
 				<View class="container" layout="horizontal" height="60">
-					<Label class="form_label" title="Contact" >关注州／地区</Label>
-					<TextField class="text_input" id="prefer_state" onClick="chooseState" editable="false"  hintText='請選擇关注州／地区'   width="90%" />
+					<Label class="form_label" title="Contact" >关注省份</Label>
+					<TextField class="text_input" id="prefer_state" onClick="chooseState" editable="false"  hintText='請選擇关注省份'   width="90%" />
 				</View>
 				<View class="container" layout="horizontal" height="60">
 					<Label class="form_label" title="Email">新密碼</Label>

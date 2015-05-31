@@ -2,7 +2,7 @@
 	<Window class="container" id="dealer_daily_profit">
 		<Require src="_subheader"></Require>
 		<View class="content_post" id="content">
-			<Label class="h2" id="titleHeader">Staff Daily Profit</Label>
+			<Label class="h2" id="titleHeader">員工每日利潤</Label>
 			<ImageView class="separator" ></ImageView>
 		</View>
 		<View class="list_form"  >

@@ -8,7 +8,7 @@
 			
 		</View>
 		<View class="content_post" id="content">
-			<Label class="h2">HOME - ALL TASK</Label>
+			<Label class="h2">全部待處理訂單</Label>
 			<ImageView class="separator" ></ImageView>
 		</View>
 		<View class="home_form" id="home_form" >

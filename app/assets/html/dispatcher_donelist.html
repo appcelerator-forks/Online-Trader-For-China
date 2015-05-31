@@ -16,7 +16,7 @@
   				$( "#datepicker" ).val(dateToday);
 			    $( "#datepicker" ).datepicker({
 				    onSelect: function(dateText) {
-				       $("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+				       $("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>加载中...</div>");
 				         thedate =$( "#datepicker" ).val();
 				       
 	        			$( "#datepicker" ).val(thedate);
@@ -113,7 +113,7 @@
 			function dispatchrdoneListParam(e){
 				localStorage.setItem("url", e.url);
             	localStorage.setItem("session",e.session);
-            	$("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+            	$("#dealer_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>加载中...</div>");
 				thedate =$( "#datepicker" ).val();
 				drawTable(e.url+"&donedate="+thedate);
 			}

@@ -26,7 +26,7 @@
 				var month =$( "#month" ).val();
 				var year =$( "#year" ).val();
 				var dateRpt = localStorage.getItem("targetURL");
-				$("#dealer_statistic_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+				$("#dealer_statistic_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>加载中...</div>");
 				
 				drawTable(dateRpt+"&month="+month+"&year="+year);
 			}
@@ -45,7 +45,7 @@
 				   	 	var tableTitle = localStorage.getItem("tableTitle");
 
 				   	 	str += "<table cellpadding='0' cellspacing='0' style='width:100%;' class='bordered'>";
-				   	 	str += "<tr><td width='25%'>日期</td><td width='15%'>快遞訂單</td><td width='15%'>普通訂單</td><td width='15%'>Ads</td><td width='15%'>其他</td></tr>";
+				   	 	str += "<tr><td width='25%'>日期</td><td width='15%'>快遞訂單</td><td width='15%'>普通訂單</td><td width='15%'>广告费</td><td width='15%'>其他</td></tr>";
 						if(data.data == ""){
 					  		str += "<tr><td colspan='6' style='text-align:center;'>沒有找到記錄</td></tr>";
 					  	}else{

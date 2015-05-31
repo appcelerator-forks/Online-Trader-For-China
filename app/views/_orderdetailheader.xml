@@ -1,6 +1,6 @@
 <Alloy>
 	<View id="header">
-		<Label id="backTitle" onTouchend="goBack" fontSize=14>返回</Label>
+		<Label id="backTitle" onTouchend="goBack" fontSize="14">返回</Label>
 		<View class="border-line" left="25%" top="0%"></View>
 		<Label class="h1" id="appTitle">ONLINE TRADER</Label>
 		<View class="border-line" left="75%" top="0%"></View>

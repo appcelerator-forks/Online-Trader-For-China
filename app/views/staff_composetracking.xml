@@ -1,14 +1,14 @@
 <Alloy>
 	<Window class="container" id="composetracking_win">
 		<View id="header">
-			<Label id="backTitle" onTouchend="goBack">BACK</Label>
+			<Label id="backTitle" onTouchend="goBack">返回</Label>
 			<View class="border-line" left="25%" top="0%"></View>
-			<Label class="h1" id="appTitle">MESSAGE</Label>
+			<Label class="h1" id="appTitle">信息</Label>
 			<View class="border-line" left="75%" top="0%"></View>
-			<Label id="rightMenu" mod="ordertracking" onClick="sendTracking">SEND</Label>
+			<Label id="rightMenu" mod="ordertracking" onClick="sendTracking">发送</Label>
 		</View>
 		<View class="content_post" id="content">
-			<Label class="h2">ADD TRACKING</Label>
+			<Label class="h2">添加追踪信息</Label>
 			<ImageView class="separator" ></ImageView>
 		</View>
 		<View layout="vertical" id="loadingBar" height="0" width="100" borderRadius="15" top="230" zIndex="99" opacity="0" backgroundColor="#2E2E2E" >
@@ -18,7 +18,7 @@
 		<View class="details_form"  >
 			<TextArea id="textArea" id="trackingMessage" suppressReturn="false"
             borderWidth="2" borderColor="#bbb" borderRadius="2"
-            color="#888" textAlign="left" hintText="Enter tracking message"
+            color="#888" textAlign="left" hintText="请输入追踪信息"
             top="5" width="90%" height="150" />
 		</View>
 		

@@ -163,7 +163,7 @@ function getAnnouncement(e) {
 					    e.source.right = 0;
 					    e.source.animate(animation); 
 					});
-				   e.source.animate(animation);
+				  // e.source.animate(animation);
 				  
 				});
 			//	createAlert("Announcement",text);

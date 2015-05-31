@@ -98,7 +98,7 @@
         	localStorage.setItem("session",e.session);
     		localStorage.setItem("pick", e.pick);
     		getStateSelector(e);
-    		$("#pending_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>Loading...</div>");
+    		$("#pending_order_list").html("<div style='display:inline;color:#243F8B;font-weight:bold;'>加载中...</div>");
 			//drawTable(e.url);
 			setTimeout(function(){loadArea();},1500);
 		}	
@@ -169,7 +169,7 @@
 			   		
 					var bal = parseInt(tot) -1;
 			   		if(bal == 0 ){
-			   			$("#pending_order_list").html("No record available.");
+			   			$("#pending_order_list").html("沒有找到記錄");
 			   		}
 			   		$("#total_item").val(bal);
 			   		//Hide table title if no child available
@@ -203,7 +203,7 @@
 					     	//str += "<div style='float:right;position:absolute;right:5px;'></div>";
 					      	str += "<table class='table_"+key+" boxes "+unread+"' width='100%' id='table_"+ val.order.o_id+"'>";
 
-					      	str += "<tr><th width='20%'>Ref. No.</th><td width='70%' style='color:#525252'> : "+ val.order.o_id+"</td><td rowspan=4 valign=middle><div id='divPick"+val.order.o_id+"'><img onClick='return pickOrder(\""+key+"\", "+val.order.o_id+");' src='../images/btn-pick-blue.png'  style='height:30px; float:right;' ></div><div id='divPicking"+val.order.o_id+"' style='height:30px; float:right;display:none;'>Picking...</div></td></tr>";
+					      	str += "<tr><th width='20%'>訂單编号</th><td width='70%' style='color:#525252'> : "+ val.order.o_id+"</td><td rowspan=4 valign=middle><div id='divPick"+val.order.o_id+"'> </td></tr>";
 					      	str += "<tr><th width='20%' valign=top>客戶姓名</th><td valign=top style='color:#525252'> : "+ val.order.name+"</td></tr>";
 					      	if(val.order.areaname != ""){
 					      		str += "<tr><th width='20%' valign=top>区域</th><td valign=top style='color:#525252'> : "+ val.order.location+", "+val.order.areaname+", "+val.order.area+"</td></tr>";
@@ -238,7 +238,7 @@
 					 
 					}else{
 						
-					 	str = "<div>No record found</div>";
+					 	str = "<div>沒有找到記錄</div>";
 					 	
 					}
 					
